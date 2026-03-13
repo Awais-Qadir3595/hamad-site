@@ -32,32 +32,29 @@
 </head>
 
 <script>
-document.getElementById("whatsappForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+function sendToWhatsApp(){
 
-  var firstName = document.querySelector('input[name="first_name"]').value;
-  var lastName = document.querySelector('input[name="last_name"]').value;
-  var email = document.querySelector('input[name="email"]').value;
-  var phone = document.querySelector('input[name="phone"]').value;
-  var message = document.querySelector('textarea[name="message"]').value;
+var firstName = document.querySelector('[name="first_name"]').value;
+var lastName = document.querySelector('[name="last_name"]').value;
+var email = document.querySelector('[name="email"]').value;
+var phone = document.querySelector('[name="phone"]').value;
+var message = document.querySelector('[name="message"]').value;
 
-  var whatsappMessage =
-`New Booking Request
+var text =
+"New Booking Request\n\n" +
+"First Name: " + firstName + "\n" +
+"Last Name: " + lastName + "\n" +
+"Email: " + email + "\n" +
+"Phone: " + phone + "\n\n" +
+"Message:\n" + message;
 
-First Name: ${firstName}
-Last Name: ${lastName}
-Email: ${email}
-Phone: ${phone}
+var number = "447913174310"; // change to your WhatsApp number
 
-Message:
-${message}`;
+var url = "https://wa.me/" + number + "?text=" + encodeURIComponent(text);
 
-  var phoneNumber = "447913174310"; // your WhatsApp number
+window.open(url, "_blank");
 
-  var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(whatsappMessage);
-
-  window.open(url, "_blank");
-});
+}
 </script>
 
 
@@ -608,38 +605,11 @@ Book your move online and let us take care of the heavy lifting.
                 </div>
               </form> -->
               
-<form id="whatsappForm">
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <input type="text" name="first_name" class="form-control" placeholder="First Name" required />
-    </div>
-    <div class="form-group col-md-6">
-      <input type="text" name="last_name" class="form-control" placeholder="Last Name" required />
-    </div>
-  </div>
 
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <input type="email" name="email" class="form-control" placeholder="Email" required />
-    </div>
-    <div class="form-group col-md-6">
-      <input type="text" name="phone" class="form-control" placeholder="Phone Number" required />
-    </div>
-  </div>
 
-  <div class="form-group">
-    <textarea name="message" class="form-control message-box"
-      placeholder="Your Message / Van Booking Details" rows="4" required></textarea>
-  </div>
+              <!-- <form action="https://formspree.io/f/your_form_id" method="POST"> -->
 
-  <div class="btn-box">
-    <button type="submit" class="submit_btn">
-      Send Message
-    </button>
-  </div>
-</form>
-
-              <!-- <form action="https://formspree.io/f/your_form_id" method="POST">
+               <form id="bookingForm">
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <input type="text" name="first_name" class="form-control" placeholder="First Name" required />
@@ -661,14 +631,19 @@ Book your move online and let us take care of the heavy lifting.
                     placeholder="Your Message / Van Booking Details" rows="4" required></textarea>
                 </div>
                 <div class="btn-box">
-                  <button type="submit" class="submit_btn">
+
+                  <button type="button" class="submit_btn" onclick="sendToWhatsApp()">
+  Send Message
+</button>
+                   
+                  <!-- <button type="submit" class="submit_btn">
                     Send Message
-                  </button>
-                  <button id="showMap" class="map_btn">
+                  </button> -->
+                  <!-- <button id="showMap" class="map_btn">
                     Map
-                  </button>
+                  </button> -->
                 </div>
-              </form> -->
+              </form> 
             </div>
             <div class="map_container">
               <div class="map">
