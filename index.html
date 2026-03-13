@@ -32,33 +32,63 @@
 </head>
 
 <script>
-function sendToWhatsApp(){
+  function sendToWhatsApp() {
 
-var firstName = document.querySelector('[name="first_name"]').value;
-var lastName = document.querySelector('[name="last_name"]').value;
-var email = document.querySelector('[name="email"]').value;
-var phone = document.querySelector('[name="phone"]').value;
-var message = document.querySelector('[name="message"]').value;
+    var firstName = document.querySelector('[name="first_name"]').value;
+    var lastName = document.querySelector('[name="last_name"]').value;
+    var message = document.querySelector('[name="message"]').value;
 
-var text =
-"New Booking Request\n\n" +
-"First Name: " + firstName + "\n" +
-"Last Name: " + lastName + "\n" +
-"Email: " + email + "\n" +
-"Phone: " + phone + "\n\n" +
-"Message:\n" + message;
+    var text =
+      "New Booking Request\n\n" +
+      "First Name: " + firstName + "\n" +
+      "Last Name: " + lastName + "\n" +
+      "Message:\n" + message;
 
-var number = "447913174310"; // change to your WhatsApp number
+    var number = "447913174310"; // change to your WhatsApp number
 
-var url = "https://wa.me/" + number + "?text=" + encodeURIComponent(text);
+    var url = "https://wa.me/" + number + "?text=" + encodeURIComponent(text);
 
-window.open(url, "_blank");
+    window.open(url, "_blank");
 
-}
+  }
 </script>
+
+<style>
+.marquee-container {
+  overflow: hidden;
+  background: #1f4172; /* WhatsApp green */
+  border-radius: 5px;
+  padding: 1px 0;
+}
+
+.marquee-text {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%; /* Start off-screen */
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  animation: marquee 40s linear infinite; /* slower */
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Optional: slower on mobile */
+@media (max-width: 768px) {
+  .marquee-text {
+    font-size: 14px;
+    animation: marquee 50s linear infinite; /* even slower on mobile */
+  }
+}
+</style>
+
 
 
 <body>
+
   <div class="hero_area">
     <div class="hero_bg_box">
       <img src="images/hero-bg.jpg" alt="">
@@ -71,18 +101,20 @@ window.open(url, "_blank");
             <div class="col-md-4">
               <div class="full">
                 <div class="social_box">
+                   
                   <a href="">
                     <i class="fa fa-facebook" aria-hidden="true"></i>
                   </a>
-                  <a href="">
+                  <!-- <a href="">
                     <i class="fa fa-twitter" aria-hidden="true"></i>
-                  </a>
+                  </a> -->
                   <a href="">
                     <i class="fa fa-instagram" aria-hidden="true"></i>
                   </a>
-                  <a href="">
+
+                  <!-- <a href="">
                     <i class="fa fa-youtube" aria-hidden="true"></i>
-                  </a>
+                  </a> -->
                 </div>
               </div>
             </div>
@@ -90,11 +122,11 @@ window.open(url, "_blank");
               <div class="full">
                 <div class="contact_nav">
                   <a href="">
-                  <i class="fa fa-map-marker" aria-hidden="true"></i>
-                  <span>
-                    Birmingham , England
-                  </span>
-                </a>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span>
+                      Birmingham , England
+                    </span>
+                  </a>
                   <a href="">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                     <span>
@@ -104,7 +136,7 @@ window.open(url, "_blank");
                   <a href="" class="call-link">
                     <i class="fa fa-phone" aria-hidden="true"></i>
                     <span>
-                      Call : +44 7495 114844
+                      Call : +447495114844
                     </span>
                   </a>
                 </div>
@@ -113,6 +145,14 @@ window.open(url, "_blank");
           </div>
         </div>
       </div>
+
+       <div class="marquee-container">
+  <p class="marquee-text">
+    Serving <strong>Birmingham</strong>, <strong>Solihull</strong>, <strong>Walsall</strong>, <strong>West Bromwich</strong>, <strong>Smethwick</strong>, <strong>Dudley</strong>, <strong>Wolverhampton</strong>, <strong>Halesowen</strong>, <strong>Stourbridge</strong>, <strong>Tamworth</strong> – Call us now on <strong>+44 7123 456789</strong> or WhatsApp to book your move!
+  </p>
+</div>
+
+
       <div class="header_bottom">
         <div class="container">
           <div class="row">
@@ -158,6 +198,7 @@ window.open(url, "_blank");
         </div>
       </div>
     </header>
+    
     <!-- end header section -->
     <!-- slider section -->
     <section class="slider_section ">
@@ -173,12 +214,13 @@ window.open(url, "_blank");
                       <!-- Van Booking Across Pakistan -->
                     </h1>
                     <p>
-                      <!-- Experience hassle-free moving with our professional van services. Whether it's home shifting,
-                      office relocation, or transporting goods, we ensure your belongings are handled safely and
-                      delivered on time. -->
-                      We proudly provide our moving services across Birmingham and nearby areas. Our goal is to support local residents,
-                       families, and students who need help transporting their belongings from one location to another. Because we operate locally,
-                      
+                    We proudly provide reliable Man and Van services
+                     across Birmingham and surrounding areas within a 20-mile radius. 
+                     Our goal is to support local residents, families, students,
+                      and small businesses who need help moving luggage, boxes, 
+                      furniture, and personal belongings. Because we operate locally, we understand the routes and neighborhoods 
+                    around Birmingham, allowing us to provide fast, efficient, and dependable moving services.
+
                     </p>
                     <div class="btn-box">
                       <a href="contact.html" class="btn1">
@@ -196,11 +238,13 @@ window.open(url, "_blank");
                 <div class="col-md-9 col-lg-6">
                   <div class="detail-box">
                     <h1>
-                      Seamless Home & Furniture Shifting
+                     Reliable & Affordable Moving Service
                     </h1>
                     <p>
-                      Moving homes? Our expert team loads, transports, and unloads your furniture, appliances, and
-                      valuables with precision and care. Sit back and relax while we do the heavy lifting.
+                      Our Man and Van service is perfect for small house moves, student relocations,
+                       furniture transport, and luggage moving. Whether you are moving to a new apartment, 
+                       relocating to another area, or transporting a few items, we provide a safe and affordable solution.
+                       We handle your belongings with care and ensure they reach their destination securely and on time.
 
                     </p>
                     <div class="btn-box">
@@ -219,12 +263,11 @@ window.open(url, "_blank");
                 <div class="col-md-9 col-lg-6">
                   <div class="detail-box">
                     <h1>
-                      Office & Goods Relocation
+                      Moving Services Within 20 Miles of Birmingham
                     </h1>
                     <p>
-                      Relocate your office or business assets without delays. Our timely van services guarantee secure
-                      transport, professional handling, and a stress-free moving experience for your company or
-                      inventory.
+                      We provide moving services not only in Birmingham but also in nearby areas within a 20-mile distance. If you need help moving items between homes, apartments, storage units, or student
+                       accommodations, our team is ready to assist. Our service is designed to make moving simple, convenient, and stress-free for customers throughout the Birmingham region.
                     </p>
                     <div class="btn-box">
                       <a href="contact.html" class="btn1">
@@ -272,11 +315,13 @@ window.open(url, "_blank");
             <p>
               Reliable Luggage & Home Moving Service in Birmingham
 
-Moving to a new home can be stressful, but we make it simple. We provide professional luggage and home moving services in Birmingham, helping people safely transport their belongings from one place to another.
+              Moving to a new home can be stressful, but we make it simple. We provide professional luggage and home
+              moving services in Birmingham, helping people safely transport their belongings from one place to another.
 
-Whether you are moving to a new house, apartment, or student accommodation, our team is ready to help. We handle your luggage and household items with care so your move becomes easy, safe, and stress-free.
+              Whether you are moving to a new house, apartment, or student accommodation, our team is ready to help. We
+              handle your luggage and household items with care so your move becomes easy, safe, and stress-free.
 
-Book your move online and let us take care of the heavy lifting.
+              Book your move online and let us take care of the heavy lifting.
               <!-- Move Home is Pakistan's trusted van booking and moving service. We specialize in home shifting, office
               relocation, and goods transportation, providing safe, reliable, and efficient solutions for our clients.
               Our experienced team ensures every item—furniture, appliances, and valuables—is handled with care and
@@ -303,8 +348,9 @@ Book your move online and let us take care of the heavy lifting.
             Our <span>Services</span>
           </h2>
           <p>
-            Professional van booking services to make your home, office, or long-distance move safe, easy, and
-            stress-free.
+            We provide reliable Man and Van moving services in Birmingham and nearby areas 
+        including <b>Solihull, Walsall, West Bromwich, Smethwick, Dudley, Wolverhampton,</b> and 
+        surrounding locations within 20 miles.
           </p>
         </div>
         <div class="row">
@@ -321,7 +367,8 @@ Book your move online and let us take care of the heavy lifting.
                   We help you move your home efficiently. From furniture to appliances, our team ensures all household
                   items are transported safely and delivered on time.
                 </p>
-                <a href="">
+                 
+                <a href="https://wa.me/447495114844">
                   Book Now
                   <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                 </a>
@@ -341,7 +388,7 @@ Book your move online and let us take care of the heavy lifting.
                   We provide secure van services for your office furniture, equipment, and documents, ensuring minimal
                   downtime and a smooth transition.
                 </p>
-                <a href="">
+                <a href="https://wa.me/447495114844">
                   Book Now
                   <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                 </a>
@@ -361,7 +408,7 @@ Book your move online and let us take care of the heavy lifting.
                   Moving to another city? Our vans are equipped for long-distance transport, keeping your items secure
                   and delivering them safely to your new location.
                 </p>
-                <a href="">
+                <a href="https://wa.me/447495114844">
                   Book Now
                   <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                 </a>
@@ -604,12 +651,12 @@ Book your move online and let us take care of the heavy lifting.
                   </button>
                 </div>
               </form> -->
-              
+
 
 
               <!-- <form action="https://formspree.io/f/your_form_id" method="POST"> -->
 
-               <form id="bookingForm">
+              <form id="bookingForm">
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <input type="text" name="first_name" class="form-control" placeholder="First Name" required />
@@ -618,14 +665,14 @@ Book your move online and let us take care of the heavy lifting.
                     <input type="text" name="last_name" class="form-control" placeholder="Last Name" required />
                   </div>
                 </div>
-                <div class="form-row">
+                <!-- <div class="form-row">
                   <div class="form-group col-md-6">
                     <input type="email" name="email" class="form-control" placeholder="Email" required />
                   </div>
                   <div class="form-group col-md-6">
                     <input type="text" name="phone" class="form-control" placeholder="Phone Number" required />
                   </div>
-                </div>
+                </div> -->
                 <div class="form-group">
                   <textarea name="message" class="form-control message-box"
                     placeholder="Your Message / Van Booking Details" rows="4" required></textarea>
@@ -633,9 +680,9 @@ Book your move online and let us take care of the heavy lifting.
                 <div class="btn-box">
 
                   <button type="button" class="submit_btn" onclick="sendToWhatsApp()">
-  Send Message
-</button>
-                   
+                    Send Message
+                  </button>
+
                   <!-- <button type="submit" class="submit_btn">
                     Send Message
                   </button> -->
@@ -643,7 +690,7 @@ Book your move online and let us take care of the heavy lifting.
                     Map
                   </button> -->
                 </div>
-              </form> 
+              </form>
             </div>
             <div class="map_container">
               <div class="map">
@@ -702,8 +749,8 @@ Book your move online and let us take care of the heavy lifting.
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                   </div>
                   <p>
-                   
-quickmovevanservices@gmail.com
+
+                    quickmovevanservices@gmail.com
                   </p>
                 </div>
               </a>
@@ -719,21 +766,21 @@ quickmovevanservices@gmail.com
           <a href="">
             <i class="fa fa-facebook" aria-hidden="true"></i>
           </a>
-          <a href="">
+          <!-- <a href="">
             <i class="fa fa-twitter" aria-hidden="true"></i>
-          </a>
-          <a href="">
+          </a> -->
+          <!-- <a href="">
             <i class="fa fa-youtube" aria-hidden="true"></i>
-          </a>
+          </a> -->
           <a href="">
             <i class="fa fa-instagram" aria-hidden="true"></i>
           </a>
-          <a href="">
+          <!-- <a href="">
             <i class="fa fa-google-plus" aria-hidden="true"></i>
-          </a>
+          </a> -->
         </div>
       </div>
-      <div class="col-lg-10 mx-auto px-0">
+      <!-- <div class="col-lg-10 mx-auto px-0">
         <div class="footer_form">
           <h4>
             Subscribe to Our Newsletter
@@ -745,7 +792,7 @@ quickmovevanservices@gmail.com
             </button>
           </form>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="footer-info">
       <div class="container">
@@ -759,9 +806,9 @@ quickmovevanservices@gmail.com
   <!-- footer section -->
 
   <script>
-  // Automatically display current year
-  document.getElementById('displayYear').textContent = new Date().getFullYear();
-</script>
+    // Automatically display current year
+    document.getElementById('displayYear').textContent = new Date().getFullYear();
+  </script>
 
   <!-- jQery -->
   <script src="js/jquery-3.4.1.min.js"></script>
@@ -777,8 +824,8 @@ quickmovevanservices@gmail.com
   <!-- End Google Map -->
 
   <a href="https://wa.me/447495114844" class="whatsapp-float" target="_blank">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-</a>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
 </body>
 
 </html>

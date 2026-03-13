@@ -30,6 +30,29 @@
       <![endif]-->
 </head>
 
+<script>
+  function sendToWhatsApp() {
+
+    var firstName = document.querySelector('[name="first_name"]').value;
+    var lastName = document.querySelector('[name="last_name"]').value;
+    var message = document.querySelector('[name="message"]').value;
+
+    var text =
+      "New Booking Request\n\n" +
+      "First Name: " + firstName + "\n" +
+      "Last Name: " + lastName + "\n" +
+      "Message:\n" + message;
+
+    var number = "447913174310"; // change to your WhatsApp number
+
+    var url = "https://wa.me/" + number + "?text=" + encodeURIComponent(text);
+
+    window.open(url, "_blank");
+
+  }
+</script>
+
+
 <body class="sub_page">
   <div class="hero_area">
     <div class="hero_bg_box">
@@ -143,7 +166,7 @@
                   Contact <span>Us</span>
                 </h2>
               </div>
-              <form action="https://formspree.io/f/your_form_id" method="POST">
+               <form id="bookingForm">
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <input type="text" name="first_name" class="form-control" placeholder="First Name" required />
@@ -152,25 +175,18 @@
                     <input type="text" name="last_name" class="form-control" placeholder="Last Name" required />
                   </div>
                 </div>
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <input type="email" name="email" class="form-control" placeholder="Email" required />
-                  </div>
-                  <div class="form-group col-md-6">
-                    <input type="text" name="phone" class="form-control" placeholder="Phone Number" required />
-                  </div>
-                </div>
+              
                 <div class="form-group">
                   <textarea name="message" class="form-control message-box"
                     placeholder="Your Message / Van Booking Details" rows="4" required></textarea>
                 </div>
                 <div class="btn-box">
-                  <button type="submit" class="submit_btn">
+
+                  <button type="button" class="submit_btn" onclick="sendToWhatsApp()">
                     Send Message
                   </button>
-                  <button id="showMap" class="map_btn">
-                    Map
-                  </button>
+
+                
                 </div>
               </form>
             </div>
@@ -192,11 +208,11 @@
   <!-- end contact section -->
 
   <!-- footer section -->
-  <footer class="footer_section">
+ <footer class="footer_section">
     <div class="container">
-      <a href="index.html" class="footer-brand">
+      <!-- <a href="index.html" class="footer-brand">
         <img src="images/logo_main.png" alt="#" />
-      </a>
+      </a> -->
       <div class="col-lg-10 mx-auto px-0">
         <div class="footer_items">
           <div class="row">
@@ -219,7 +235,7 @@
                     <i class="fa fa-phone" aria-hidden="true"></i>
                   </div>
                   <p>
-                     Call : +44 7495 114844
+                    +44 7495 114844
                   </p>
                 </div>
               </a>
@@ -231,6 +247,7 @@
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                   </div>
                   <p>
+
                     quickmovevanservices@gmail.com
                   </p>
                 </div>
@@ -247,21 +264,21 @@
           <a href="">
             <i class="fa fa-facebook" aria-hidden="true"></i>
           </a>
-          <a href="">
+          <!-- <a href="">
             <i class="fa fa-twitter" aria-hidden="true"></i>
-          </a>
-          <a href="">
+          </a> -->
+          <!-- <a href="">
             <i class="fa fa-youtube" aria-hidden="true"></i>
-          </a>
+          </a> -->
           <a href="">
             <i class="fa fa-instagram" aria-hidden="true"></i>
           </a>
-          <a href="">
+          <!-- <a href="">
             <i class="fa fa-google-plus" aria-hidden="true"></i>
-          </a>
+          </a> -->
         </div>
       </div>
-      <div class="col-lg-10 mx-auto px-0">
+      <!-- <div class="col-lg-10 mx-auto px-0">
         <div class="footer_form">
           <h4>
             Subscribe to Our Newsletter
@@ -273,7 +290,7 @@
             </button>
           </form>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="footer-info">
       <div class="container">
